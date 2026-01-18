@@ -6,6 +6,136 @@ import { readSettings } from "@/lib/settings";
 export default function HomePage() {
   const products = readProducts().filter((p) => p.featured).slice(0, 6);
   const { hero } = readSettings();
+  const masterList = [
+    {
+      title: "البنية الأساسية",
+      items: [
+        "هيكل صفحات مرن",
+        "نظام Components",
+        "دعم التوسّع",
+        "إعدادات بيئة (Local / Server)",
+        "سجل تحديثات (Changelog)",
+      ],
+    },
+    {
+      title: "التصميم والهوية",
+      items: [
+        "Luxury UI (Dark / Light)",
+        "تحكم بالألوان والخطوط",
+        "Animations + Micro-interactions",
+        "نظام Themes",
+        "دعم الشاشات الكبيرة والصغيرة",
+      ],
+    },
+    {
+      title: "الأداء",
+      items: ["تحميل كسول", "ضغط الصور تلقائيًا", "Minify Assets", "CDN-ready", "Cache متعدد"],
+    },
+    {
+      title: "الذكاء والراحة",
+      items: [
+        "بحث ذكي",
+        "اقتراحات تلقائية",
+        "Autocomplete",
+        "تخصيص حسب المستخدم",
+        "حفظ التفضيلات",
+        "تنبيهات Realtime",
+      ],
+    },
+    {
+      title: "المستخدمون",
+      items: ["تسجيل دخول/خروج", "استرجاع كلمة المرور", "جلسات وأجهزة", "ملفات شخصية", "حظر وتعطيل"],
+    },
+    {
+      title: "Roles & Permissions",
+      items: [
+        "أدوار مخصصة",
+        "صلاحيات دقيقة",
+        "ربط Action بصلاحية",
+        "عرض الصلاحيات",
+        "سجل تغييرات الصلاحيات",
+      ],
+    },
+    {
+      title: "لوحة الأدمين",
+      items: [
+        "Dashboard شامل",
+        "إدارة المستخدمين والأدوار",
+        "إدارة المحتوى",
+        "إعدادات الموقع",
+        "إشعارات وسجلات",
+        "وضع الصيانة",
+      ],
+    },
+    {
+      title: "المحتوى",
+      items: [
+        "صفحات ثابتة وديناميكية",
+        "محرر متقدم",
+        "SEO لكل صفحة",
+        "جدولة النشر",
+        "مسودات وإصدارات",
+      ],
+    },
+    {
+      title: "الأمان",
+      items: [
+        "تشفير كلمات المرور",
+        "حماية CSRF / XSS",
+        "Rate Limit",
+        "2FA",
+        "سجل أمني",
+        "إدارة IP وتنبيهات",
+      ],
+    },
+    {
+      title: "التحليلات",
+      items: ["إحصائيات الزيارات", "نشاط المستخدمين", "تقارير قابلة للتصدير", "رسوم بيانية"],
+    },
+    {
+      title: "الإشعارات",
+      items: ["داخلية", "بريد إلكتروني", "قوالب", "تحديد المستلمين حسب Role"],
+    },
+    {
+      title: "الملفات",
+      items: ["File Manager", "صلاحيات الوصول", "معاينة الملفات", "تنظيم المجلدات", "حدود الحجم"],
+    },
+    {
+      title: "التكامل",
+      items: ["API", "Webhooks", "تكامل مستقبلي", "مفاتيح API", "صلاحيات الـ API"],
+    },
+    {
+      title: "النسخ الاحتياطي",
+      items: ["Backup تلقائي", "استرجاع سريع", "جدولة", "سجل النسخ"],
+    },
+    {
+      title: "التحكم المتقدم",
+      items: ["Feature Flags", "Test Mode", "Logs عامة", "Activity Timeline"],
+    },
+    {
+      title: "التوسّع",
+      items: ["تعدد اللغات", "تعدد المناطق", "تعدد المواقع", "Multi-domain", "فرق عمل"],
+    },
+    {
+      title: "الوصول",
+      items: ["دعم ذوي الاحتياجات", "اختصارات لوحة مفاتيح", "تباين ألوان", "تكبير النص"],
+    },
+    {
+      title: "الجاهزية النهائية",
+      items: ["جاهز Local", "جاهز Server", "Config مرن", "قابل للأتمتة", "قابل للنقل"],
+    },
+    {
+      title: "الفخامة القصوى",
+      items: [
+        "Animations سينمائية",
+        "Loading Screens فخمة",
+        "Onboarding ذكي",
+        "Tooltips ذكية",
+        "UI صوتي (اختياري)",
+        "AI-ready",
+      ],
+    },
+  ];
   const adminHighlights = [
     {
       title: "إدارة متكاملة",
@@ -86,6 +216,41 @@ export default function HomePage() {
         {products.map((p) => (
           <ProductCard key={p.id} p={p} />
         ))}
+      </section>
+
+      <section className="lux-card space-y-6 p-6 md:p-10">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div className="lux-chip border-gold/20 text-gold">MASTER LIST</div>
+            <h2 className="mt-3 text-2xl font-semibold md:text-3xl">منصة فاخرة ذكية بكل التفاصيل</h2>
+            <p className="mt-3 text-sm text-white/65 md:text-base">
+              هذه هي خارطة الطريق الكاملة لبناء تجربة Luxora كما تخيلتها: فخامة، أمان، ذكاء، وقابلية
+              توسّع دون حدود.
+            </p>
+          </div>
+          <div className="lux-card p-4 text-sm text-white/70">
+            جاهز للتنفيذ على مراحل مع أولويات واضحة وتجارب مستخدم متكاملة.
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {masterList.map((item) => (
+            <div key={item.title} className="lux-card border border-white/10 p-5">
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-gold">{item.title}</h3>
+                <span className="text-xs text-white/40">{item.items.length} عناصر</span>
+              </div>
+              <ul className="mt-4 space-y-2 text-sm text-white/70">
+                {item.items.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2">
+                    <span className="mt-1 size-1.5 rounded-full bg-gold/70" aria-hidden="true" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="lux-card p-6 md:p-10">
